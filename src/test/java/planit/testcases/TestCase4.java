@@ -21,12 +21,13 @@ public class TestCase4 extends TestUtilities {
 		df.setRoundingMode(RoundingMode.UP);
 
 		// Data
+		String strEnvironment = testData.get("Environment");
 		String[] arrItems = ((testData.get("Items")).split("\\|"));
 		String[] arrQuantity = (testData.get("Quantity").split("\\|"));
 
 		// Open Home page
 		HomePage homePage = new HomePage(driver, log);
-		homePage.openPage();
+		homePage.openPage(strEnvironment);
 
 		// Navigate to Shop page
 		ShopPage shopPage = new ShopPage(driver, log);

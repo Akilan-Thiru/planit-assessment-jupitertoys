@@ -15,12 +15,13 @@ public class TestCase3 extends TestUtilities {
 	@Test(dataProvider = "csvReader", dataProviderClass = CsvDataProviders.class)
 	public void testcase3(Map<String, String> testData) {
 		// Data
+		String strEnvironment = testData.get("Environment");
 		String[] arrItems = ((testData.get("Items")).split("\\|"));
 		String[] arrQuantity = (testData.get("Quantity").split("\\|"));
 
 		// Open Home page
 		HomePage homePage = new HomePage(driver, log);
-		homePage.openPage();
+		homePage.openPage(strEnvironment);
 
 		// Navigate to Shop page
 		ShopPage shopPage = new ShopPage(driver, log);

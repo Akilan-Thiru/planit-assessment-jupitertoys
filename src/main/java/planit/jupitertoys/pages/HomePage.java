@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePageObject {
 
-	private String pageUrl = "https://jupiter.cloud.planittesting.com/#/";
-
+	private String pageJupiter1Url = "https://jupiter.cloud.planittesting.com/#/";
+	private String pageJupiter2Url = "https://jupiter2.cloud.planittesting.com/#/shop";
 	private By btnHome = By.xpath(".//a[contains(text(),'Home')]");
 	private By btnStartShopping = By.xpath(".//a[contains(text(),'Start Shopping')]");
 
@@ -16,9 +16,17 @@ public class HomePage extends BasePageObject {
 	}
 
 	/** Open HomePage with it's url */
-	public void openPage() {
-		log.info("Opening page: " + pageUrl);
-		openUrl(pageUrl);
+	public void openPage(String strEnvironment) {
+
+		switch (strEnvironment.toLowerCase()) {
+			case "jupiter2":
+				log.info("Opening page: " + pageJupiter2Url);
+				openUrl(pageJupiter2Url);
+				break;
+			default:
+				log.info("Opening page: " + pageJupiter1Url);
+				openUrl(pageJupiter1Url);
+		}
 		log.info("Page opened!");
 	}
 
