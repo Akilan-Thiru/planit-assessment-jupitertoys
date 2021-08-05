@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PlanitTestCases" verbose="1" parallel="tests" thread-count="4">
+
+    <test name="TestCase1-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="planit.testcases.TestCase1" />
+        </classes>
+    </test>
+
+    <test name="TestCase2-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="planit.testcases.TestCase2" />
+        </classes>
+    </test>
+
+    <test name="TestCase3-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="planit.testcases.TestCase3" />
+        </classes>
+    </test>
+
+    <test name="TestCase4-CH">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="planit.testcases.TestCase4" />
+        </classes>
+    </test>
+</suite>
